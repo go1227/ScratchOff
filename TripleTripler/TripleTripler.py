@@ -34,6 +34,7 @@ winning_combos = {
     "500000-1x": 1800, "500000-3x": 1800, "1000000-9x": 1800
 }
 
+
 def winning_ticket(dollar, frequency):
     # Extract triple factor from 'frequency'
     triple_factor = frequency.split('-')[1]
@@ -72,9 +73,11 @@ def losing_ticket():
             print(f"GAME {game_number} - {col1} | {col2} | {col3} ({random.choice(prize_level)})")
             count -= 1
 
-# '${:1,.2f}'.format(random.choice(prize_level))
 
-ticket_amt = 100 # number of scratchoff tickets to be printed per program execution
+# Main Program Execution:
+
+ticket_amt = 1000  # number of scratch off tickets to be printed per program execution
+# This FOR loop will print the Winning Tickets only
 for frequency, dollar_amount in winning_combos.items():
     quant = round(ticket_amt / int(frequency.split('-')[0]))
     # print(f"{dollar_amount} / {frequency}: {quant} times")
@@ -86,7 +89,7 @@ for frequency, dollar_amount in winning_combos.items():
         ticket_amt -= 1
         quant -= 1
 
-# Print losing tickets
+# Print Losing Tickets
 while ticket_amt > 0:
     print("\nCalling losing function")
     game_number += 1
