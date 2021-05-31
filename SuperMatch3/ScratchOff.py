@@ -1,6 +1,6 @@
 __author__ = "Gil Ortiz"
 __version__ = "1.1"
-__date_last_modification__ = "3/11/2019"
+__date_last_modification__ = "5/31/2021"
 __python_version__ = "3"
 
 # Program that generates scratch off tickets in batches
@@ -23,7 +23,7 @@ winning_ratio = {1: 15, 3: 50, 5: 100, 10: 250, 100: 5000, 300: 10000, 3000: 150
 #This function will generate non-winning tickets only
 def CreateLosingTicket(numbers):
     ticket_result = []
-    print('Generating LOSING tickets')
+    print('Dummy ticket: ')
     n = 3
     result = []
     while (n > 0):
@@ -44,7 +44,7 @@ def CreateLosingTicket(numbers):
 
 def CreateWiningTicket(numbers, val):
     ticket_result = []
-    print('Generating winning tickets of $' + str(val))
+    print('$' + str(val) + ' winning ticket: ')
     usable_numbers = numbers.copy()
     usable_numbers.remove(val)
     n = 3
